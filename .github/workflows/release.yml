@@ -1,0 +1,51 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Check tag, version and download URL
+        run: |
+          node -e '
+            const m = require("./module.json");
+            const tag = process.env.GITHUB_REF_NAME;
+            if (tag !== "v" + m.version) throw new Error(`Tag ${tag} != v${m.version}`);
+            const url = `https://github.com/${process.env.GITHUB_REPOSITORY}/releases/download/${tag}/${m.id}.zip`;
+            if (m.download !== url) throw new Error(`download doit valoir ${url}`);
+            if (!m.manifest.endsWith("/releases/latest/download/module.json")) throw new Error("manifest doit viser releases/latest");
+          '
+      - run: node tools/release.mjs
+      - name: Verify archive
+        run: |
+          python3 - <<'PY'
+          import json, zipfile, hashlib, pathlib
+          m = json.loads(pathlib.Path("module.json").read_text())
+          z = zipfile.ZipFile(f"dist/{m['id']}.zip")
+          assert z.testzip() is None
+          names = z.namelist()
+          assert all(n.startswith(m["id"] + "/") for n in names)
+          assert json.loads(z.read(m["id"] + "/module.json")) == m
+          assert any(n.startswith(m["id"] + "/packs/aventure/") for n in names)
+          assert not any("/node_modules/" in n or "/.qa/" in n for n in names)
+          print(len(names), "fichiers vérifiés")
+          PY
+      - name: Release notes
+        run: node -e 'const s=require("fs").readFileSync("CHANGELOG.md","utf8");const v=require("./module.json").version;const p=s.split(/^## /m).find(x=>x.startsWith(v));require("fs").writeFileSync("dist/NOTES.md",p?p.replace(/^.*\n/,""):"")'
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: Le poids de la soie ${{ github.ref_name }}
+          body_path: dist/NOTES.md
+          files: |
+            dist/le-poids-de-la-soie.zip
+            dist/module.json
+            dist/SHA256SUMS

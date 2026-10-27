@@ -1,0 +1,100 @@
+/* Le poids de la soie — journaux, tableau de bord et cartes de chat. */
+.soie-journal,
+.soie-dashboard,
+.soie-chat {
+  --soie-ink: #1f2a30;
+  --soie-muted: #5b6468;
+  --soie-paper: #f6efe1;
+  --soie-teal: #27676b;
+  --soie-red: #8f2f2f;
+  --soie-line: rgba(31, 42, 48, 0.18);
+}
+.theme-dark .soie-dashboard,
+.theme-dark .soie-chat {
+  --soie-ink: #e9e2d2;
+  --soie-muted: #b3ab9b;
+  --soie-paper: #23292c;
+  --soie-teal: #6fb7b2;
+  --soie-red: #e08a7c;
+  --soie-line: rgba(233, 226, 210, 0.2);
+}
+
+/* Journals carry their own paper so the ink stays legible in either UI theme. */
+.soie-journal {
+  color: var(--soie-ink);
+  background: var(--soie-paper);
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.soie-journal a.content-link { color: var(--soie-ink); background: rgba(39, 103, 107, 0.12); }
+.soie-journal h1,
+.soie-journal h2 { font-family: "Cinzel", Georgia, serif; color: var(--soie-teal); border: none; }
+.soie-journal h1 { border-bottom: 2px solid var(--soie-red); padding-bottom: 0.2em; }
+.soie-journal h1 small { font-size: 0.55em; color: var(--soie-muted); font-family: "EB Garamond", Georgia, serif; }
+.soie-journal .soie-lead { font-style: italic; color: var(--soie-muted); }
+.soie-journal .soie-banner { width: 100%; border: none; border-radius: 6px; margin-bottom: 0.5em; }
+.soie-journal img { max-width: 100%; height: auto; border-radius: 4px; }
+.soie-journal blockquote.soie-read {
+  border-left: 4px solid var(--soie-red);
+  background: rgba(143, 47, 47, 0.07);
+  margin: 0.8em 0;
+  padding: 0.6em 1em;
+  font-style: italic;
+}
+.soie-journal blockquote.soie-read::before { content: "À lire : "; font-style: normal; font-weight: 700; color: var(--soie-red); }
+.soie-journal .soie-tip {
+  border: 1px solid var(--soie-teal);
+  border-radius: 6px;
+  background: rgba(39, 103, 107, 0.08);
+  padding: 0.5em 0.9em;
+  margin: 0.8em 0;
+}
+.soie-journal table.soie-table { border-collapse: collapse; width: 100%; margin: 0.6em 0; font-size: 0.95em; }
+.soie-journal table.soie-table th { background: rgba(39, 103, 107, 0.15); text-align: left; }
+.soie-journal table.soie-table th,
+.soie-journal table.soie-table td { border: 1px solid var(--soie-line); padding: 0.3em 0.5em; vertical-align: top; }
+.soie-journal .soie-pregen { display: grid; grid-template-columns: 160px 1fr; gap: 1em; align-items: center; }
+.soie-journal .soie-pregen img { width: 160px; border: 3px solid var(--soie-ink); }
+a.soie-action {
+  display: inline-block;
+  padding: 0 0.4em;
+  border: 1px solid var(--soie-red, #8f2f2f);
+  border-radius: 4px;
+  background: rgba(143, 47, 47, 0.1);
+  color: inherit;
+  font-weight: 600;
+}
+
+/* Dashboard */
+.soie-dashboard .window-content { padding: 0.6rem; }
+.soie-dash { display: grid; gap: 0.6rem; color: var(--soie-ink); }
+.soie-dash h3 { margin: 0 0 0.3rem; font-family: "Cinzel", Georgia, serif; border-bottom: 1px solid var(--soie-line); }
+.soie-dash .hint { margin: 0.2rem 0 0; color: var(--soie-muted); font-size: 0.9em; }
+.soie-dash button { width: auto; flex: 0 0 auto; line-height: 1.6; padding: 0 0.5rem; }
+.soie-dash-status,
+.soie-dash .soie-row { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+.soie-dash .badge { padding: 0.1rem 0.5rem; border-radius: 999px; border: 1px solid var(--soie-line); }
+.soie-dash .badge.on { border-color: var(--soie-teal); color: var(--soie-teal); }
+.soie-dash .badge.ok { background: rgba(39, 103, 107, 0.2); }
+.soie-dash .badge.danger { background: rgba(143, 47, 47, 0.25); }
+.soie-dash .soie-pressure { display: flex; gap: 0.3rem; }
+.soie-dash .soie-pressure button[data-value] { width: 2.2rem; font-weight: 700; }
+.soie-dash .soie-pressure button.on { background: var(--soie-red); color: #fff; }
+.soie-dash .soie-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; margin-bottom: 0.4rem; }
+.soie-dash .soie-card { display: grid; padding: 0.3rem 0.5rem; border: 1px solid var(--soie-line); border-radius: 6px; }
+.soie-dash .soie-card input { justify-self: end; margin: 0; }
+.soie-dash .soie-card.done { background: rgba(39, 103, 107, 0.18); text-decoration: line-through; }
+.soie-dash .dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; border: 1px solid var(--soie-ink); }
+.soie-dash .dot.on { background: var(--soie-teal); }
+.soie-dash .soie-deals { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 0.8rem; }
+.soie-dash table.soie-captives { margin: 0; }
+.soie-dash table.soie-captives td { padding: 0.15rem 0.3rem; }
+.soie-dash tr.bound td:nth-child(4) { color: var(--soie-red); font-weight: 700; }
+.soie-dash tr.safe { opacity: 0.6; }
+
+/* Chat */
+.soie-chat h3 { font-family: "Cinzel", Georgia, serif; margin: 0 0 0.3em; }
+.soie-chat p { margin: 0.2em 0; }

@@ -1,0 +1,77 @@
+{
+  "id": "le-poids-de-la-soie",
+  "title": "Le poids de la soie",
+  "description": "One-shot Kimetsu no Yaiba pour Breathe and Live : une aventure à importer en un clic (cinq prétirés, PNJ, démons, battlemap illustrée, journaux et pièces à remettre) et un tableau de bord MJ qui automatise le final.",
+  "version": "2.0.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.368",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Yann Prévot",
+      "url": "https://github.com/PrevotYann"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "breathe-and-live",
+        "type": "system",
+        "manifest": "https://github.com/PrevotYann/breathe-and-live/releases/latest/download/manifest.json",
+        "compatibility": {
+          "minimum": "0.6.0",
+          "verified": "0.6.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/module.mjs"
+  ],
+  "styles": [
+    "styles/module.css"
+  ],
+  "packs": [
+    {
+      "name": "aventure",
+      "label": "Le poids de la soie — aventure",
+      "path": "packs/aventure",
+      "type": "Adventure",
+      "system": "breathe-and-live",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Le poids de la soie",
+      "sorting": "m",
+      "color": "#7a2e2e",
+      "packs": [
+        "aventure"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "type": "cover",
+      "url": "modules/le-poids-de-la-soie/assets/art/cover.webp"
+    },
+    {
+      "type": "setup",
+      "url": "modules/le-poids-de-la-soie/assets/art/cover.webp",
+      "thumbnail": "modules/le-poids-de-la-soie/assets/art/cover-thumb.webp"
+    }
+  ],
+  "url": "https://github.com/PrevotYann/le-poids-de-la-soie",
+  "manifest": "https://github.com/PrevotYann/le-poids-de-la-soie/releases/latest/download/module.json",
+  "download": "https://github.com/PrevotYann/le-poids-de-la-soie/releases/download/v2.0.0/le-poids-de-la-soie.zip",
+  "bugs": "https://github.com/PrevotYann/le-poids-de-la-soie/issues",
+  "changelog": "https://github.com/PrevotYann/le-poids-de-la-soie/blob/main/CHANGELOG.md",
+  "readme": "https://github.com/PrevotYann/le-poids-de-la-soie#readme",
+  "license": "LICENSE"
+}

@@ -1,0 +1,19 @@
+{
+  "assets/handouts/compte.webp": "441741d07584e3bf2944d117f7f07813b7954a6ad9fcc24c25172b719938d4a8",
+  "assets/handouts/lettre.webp": "b3f1246289cce2c84db59fb3254b1c682c6c84d46c9cb8bd6d0bb72fbf673fae",
+  "assets/handouts/notice.webp": "1e979d333e22539844b1b23c6b56be54212017ae0195560f9e807fe195e22dff",
+  "assets/handouts/ordre.webp": "a750b1328c712c9365d1070c99626adf19dbd1a2e798e1d69c5fda811cab00a9",
+  "assets/icons/zone-a.webp": "7601a6a8bab98d459e67cc17025a6da13e92d694fb1eee8f933eddca69b4f110",
+  "assets/icons/zone-b.webp": "7b4226e7aba26fcf6497d59fda2c1fda669dfe029749f78f6efc9d8994bb1ff6",
+  "assets/icons/zone-c.webp": "b1705006716db80638b9cb376c628c944e41c819a1e3251652eb6cd840fcc4fd",
+  "assets/icons/zone-d.webp": "b5050f3fa7cff065ed6bcce6b8fb21b0e0773dfbaab04ee5990d8a976e2bbb56",
+  "assets/icons/zone-e.webp": "6d56bafbfda8d70feff540c8bbba1e71c8ed45ac2b850536ee773e3339176648",
+  "assets/icons/zone-f.webp": "d417f35d74139de0dc58de88e79534a67fb04a19b61ee94102cbfe27ffee4db5",
+  "assets/items/lettre.webp": "1348450a0ba7a85f98c6e513d94ef2b288886fec92d31d8248fd1465ad66426d",
+  "assets/items/notice.webp": "710b8ad8047342f1ee277ba1edb3dec07fd8dc3c883543bd79940108b52cafda",
+  "assets/items/ordre.webp": "77bfe942dcfb6d448205bcbf624de54ad2538b758d610e671770f98355209644",
+  "resources/handouts/01_Le_poids_de_la_soie_Scenario_MJ.pdf": "3b67e456cf7308d0ea41f803e80ea88488a6870079d9e098ef114b9370aac947",
+  "resources/handouts/02_Le_poids_de_la_soie_Cinq_personnages.pdf": "c5fe39152d4d1333e716b37c8b84bfc688578d9fddfbddcebf1b4e40a82424a3",
+  "resources/handouts/03_Le_poids_de_la_soie_Aide_PJ.pdf": "83b4d837a7cabfdff43a6bd916c9e2a84f115a88e222c268d4ee828f7d47e634",
+  "resources/handouts/04_Le_poids_de_la_soie_Aide_MJ.pdf": "016f1daa36528f2adef12c6ce504392dfd19b9a1425ea496623225511c7e7f69"
+}

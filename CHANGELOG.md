@@ -1,5 +1,15 @@
 # Versions
 
+## 2.1.0
+
+- Nouvelle direction artistique inspirée des visuels d'origine : douze personnages redessinés dans le style anime de Kimetsu no Yaiba, avec leurs portraits et tokens assortis.
+- Couverture, bannière, huit icônes d'objets et contrepoids B/C/E réillustrés ; lettres des contrepoids lisibles à l'intérieur des tokens.
+- Carte de la filature repeinte, miniature et plan légendé actualisés. Dimensions de toutes les images, échelle, murs, neuf portes et placements conservés.
+- Pièces à remettre, PDF et pastilles de zones conservés à l'identique. Les chemins d'images restent les mêmes : les mondes déjà importés utilisent aussi les nouveaux visuels.
+- `npm run art` dérive les tokens et miniatures des nouvelles illustrations sans les remplacer par les anciens dessins procéduraux ; prompts archivés dans `tools/art/prompts.json`.
+- Publication automatique de la version du manifeste lors de son changement sur `main`, avec création du tag, archive installable, manifeste Foundry, notes et somme SHA-256. Déclenchement par tag et relance manuelle également disponibles ; une version déjà publiée est conservée.
+- Vérification avant publication des versions, URLs, dimensions, transparence, références du compendium et intégrité des fichiers de l'archive.
+
 ## 2.0.0
 
 **Foundry VTT 14 et Breathe and Live 0.6.**

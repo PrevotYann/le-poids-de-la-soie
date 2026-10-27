@@ -1,12 +1,14 @@
 {
   "name": "le-poids-de-la-soie",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "art": "node tools/art.mjs",
     "build": "node tools/build.mjs",
     "release": "node tools/release.mjs",
+    "validate": "node tools/validate.mjs",
+    "release:check": "node tools/check-release.mjs",
     "qa": "node tools/qa.mjs"
   },
   "devDependencies": {
